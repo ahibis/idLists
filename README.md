@@ -4,6 +4,7 @@ the difference between this list and others is that it adds the added ids in asc
 It is easy to turn this list into a string and from a string to a list. 
 The search and addition of elements takes place using binary search, which is why the speed of adding new elements is very high.
 at this version list can keep id no more than 65 535. 
+![image](https://user-images.githubusercontent.com/37046811/163733810-2cc22759-14eb-404b-8dce-6aa5676f2c81.png)
 ## api
 ```c#
 new IdList(string hash = ""); // list create with hash O(n)
@@ -20,4 +21,4 @@ List<int> idList.toList() // return Ids of List<id> O(n)
 - [ ] - to store an id, use more than 1 letter
 - [ ] - use approximation search instead of binary search
 - [ ] - optimisation for big data
-![image](https://user-images.githubusercontent.com/37046811/163733810-2cc22759-14eb-404b-8dce-6aa5676f2c81.png)
+
