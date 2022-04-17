@@ -6,11 +6,11 @@ namespace likes
 {
     public class IdList
     {
-        string _likes;
+        string hash;
 
         public IdList(string hash = "")
         {
-            _likes = hash;
+            this.hash = hash;
         }
         static int BinarySearch(string array, int searchedValue, int first, int last)
         {
@@ -78,22 +78,20 @@ namespace likes
         }
         public bool hasId(int Id)
         {
-            return BinarySearchPut(_likes, Id, 0, _likes.Length - 1)==-1;
+            return BinarySearchPut(hash, Id, 0, hash.Length - 1)==-1;
         }
-        public string AddId(int Id)
+        public void AddId(int Id)
         {
-
-            int f1 = BinarySearchPut(_likes, Id, 0, _likes.Length - 1);
+            int f1 = BinarySearchPut(hash, Id, 0, hash.Length - 1);
             if (f1 == -1)
-                return _likes;
+                return;
             char ch = (char)Id;
-            _likes=_likes.Insert(f1, ch.ToString());
-            return _likes;
+            hash=hash.Insert(f1, ch.ToString());
         }
         public List<int> toList()
         {
             var list = new List<int>();
-            foreach (char a in _likes)
+            foreach (char a in hash)
             {
                 list.Add(a);
             }
@@ -101,13 +99,13 @@ namespace likes
         }
         public string toString()
         {
-            return _likes;
+            return hash;
         }
         public void removeId(int Id)
         {
-            int f = BinarySearch(_likes, Id, 0, _likes.Length - 1);
+            int f = BinarySearch(hash, Id, 0, hash.Length - 1);
             if (f == -1) return;
-            _likes=_likes.Remove(f, 1);
+            hash=hash.Remove(f, 1);
         }
     }
 }
