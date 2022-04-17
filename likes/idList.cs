@@ -8,9 +8,9 @@ namespace likes
     {
         string _likes;
 
-        public IdList(string likes = "")
+        public IdList(string hash = "")
         {
-            _likes = likes;
+            _likes = hash;
         }
         static int BinarySearch(string array, int searchedValue, int first, int last)
         {
